@@ -48,6 +48,9 @@ cp .env.example .env
 ```
 vim .env
 ```
+
+# 开通服务
+使用前请务必在https://vision.aliyun.com/imageseg进行开通，0.0020元/次
   
 # 设置阿里云的AccessKeyId和AccessKeySecret
 ```

@@ -77,6 +77,11 @@ func main() {
 	if err != nil {
 		fmt.Println("Error walking through input directory:", err)
 	}
+	// 处理完毕后提示用户
+	fmt.Println("任务执行完毕，按 Enter 键退出...")
+	fmt.Scanln() // 等待用户输入，按 Enter 键继续
+
+	os.Exit(0) // 正常退出程序
 }
 
 func ensureDir(dirName string) {

@@ -138,7 +138,10 @@ func handleImage(cli *client.Client, imagePath, outputDir string) {
 		return
 	}
 
-	outputPath := filepath.Join(outputDir, filepath.Base(imagePath))
+	// 确保输出文件使用PNG格式
+	baseFileName := filepath.Base(imagePath)
+	fileNameWithoutExt := strings.TrimSuffix(baseFileName, filepath.Ext(baseFileName))
+	outputPath := filepath.Join(outputDir, fileNameWithoutExt+".png")
 
 	// 下载并保存图像
 	err = downloadAndSaveImage(*resp.Body.Data.ImageURL, outputPath)
